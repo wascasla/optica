@@ -11,7 +11,7 @@ exports.nuevoCliente = async (req, res, next) => {
   } catch (error) {
     // si hay un error, console.log y next para que no se
     // pare la aplicacion y siga al siguiente middleware
-    console.log(error);
+    res.send(error);
     next();
   }
 };
@@ -56,7 +56,7 @@ exports.actualizarCliente = async (req, res, next) => {
     );
     res.json(cliente);
   } catch (error) {
-    console.log(error);
+    res.send(error);
     next();
   }
 };

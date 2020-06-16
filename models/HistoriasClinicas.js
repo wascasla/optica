@@ -6,6 +6,10 @@ const historiasClinicaSchema = new Schema({
         type: String,
         trim: false,
     },
+    ficha: {
+        type: String,
+        trim: false,
+    },
     paciente: {
         type: Schema.ObjectId,
         ref: 'Pacientes',

@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const clienteController = require('../controllers/clienteController');
-const productosController = require('../controllers/productosController');
-const pedidosController = require('../controllers/pedidosController');
+//const clienteController = require('../controllers/clienteController');
+//const productosController = require('../controllers/productosController');
+const pacientesController = require('../controllers/pacientesController');
 const usuariosController = require('../controllers/usuariosController');
 
 // middle para proteger las rutas
@@ -10,35 +10,35 @@ const auth = require('../middleware/auth');
 
 module.exports = function () {
   //agrega nuevos clientes via POST
-  router.post('/clientes',
-    auth,
-    clienteController.nuevoCliente);
-
-  // obtener todos los clientes
-  router.get('/clientes',
-    auth,
-    clienteController.mostrarClientes
-  );
-
-  //obtener un cliente por id
-  router.get('/clientes/:idCliente',
-    auth,
-    clienteController.mostrarCliente);
-
-  //Actualizar cliente
-  router.put('/clientes/:idCliente',
-    auth,
-    clienteController.actualizarCliente);
-
-  //Eliminar cliente
-  router.delete('/clientes/:idCliente',
-    auth,
-    clienteController.eliminarCliente);
-
+  /*  router.post('/clientes',
+      auth,
+      clienteController.nuevoCliente);
+  
+    // obtener todos los clientes
+    router.get('/clientes',
+      auth,
+      clienteController.mostrarClientes
+    );
+  
+    //obtener un cliente por id
+    router.get('/clientes/:idCliente',
+      auth,
+      clienteController.mostrarCliente);
+  
+    //Actualizar cliente
+    router.put('/clientes/:idCliente',
+      auth,
+      clienteController.actualizarCliente);
+  
+    //Eliminar cliente
+    router.delete('/clientes/:idCliente',
+      auth,
+      clienteController.eliminarCliente);
+  */
   /** PRODUCTOS */
 
   //agrear nuevos productos
-  router.post(
+  /*router.post(
     '/productos',
     auth,
     productosController.subirArchivo,
@@ -72,11 +72,11 @@ module.exports = function () {
   router.post('/productos/busqueda/:query',
     auth,
     productosController.buscarProducto);
-
+*/
   /** PEDIDOS */
 
   //agregar un nuevo pedido
-  router.post('/pedidos/nuevo/:idUsuario',
+  /*router.post('/pedidos/nuevo/:idUsuario',
     auth,
     pedidosController.nuevoPedido);
 
@@ -99,7 +99,7 @@ module.exports = function () {
   router.delete('/pedidos/:idPedido',
     auth,
     pedidosController.eliminarPedido);
-
+*/
   // Usuarios
   router.post('/crear-cuenta',
     auth,
@@ -107,5 +107,12 @@ module.exports = function () {
 
   router.post('/iniciar-sesion', usuariosController.autenticarUsuario);
 
+  //Pacientes
+  //mostrar un mensaje
+  router.get('/mensaje',
+    pacientesController.mensaje);
+
   return router;
+
+
 };

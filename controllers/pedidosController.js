@@ -1,4 +1,4 @@
-const Pedidos = require('../models/Pedidos');
+/*const Pedidos = require('../models/Pedidos');
 
 //agregar un nuevo pedido
 exports.nuevoPedido = async (req, res, next) => {
@@ -80,4 +80,4 @@ exports.eliminarPedido = async (req, res, next) => {
     console.log(error);
     next();
   }
-};
+};*/

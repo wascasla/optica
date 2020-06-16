@@ -1,4 +1,4 @@
-const Clientes = require('../models/Clientes');
+/*const Clientes = require('../models/Clientes');
 
 // agrega un nuevo cliente
 exports.nuevoCliente = async (req, res, next) => {
@@ -70,4 +70,4 @@ exports.eliminarCliente = async (req, res, next) => {
     console.log(error);
     next();
   }
-};
+};*/

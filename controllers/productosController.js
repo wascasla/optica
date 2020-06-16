@@ -1,4 +1,4 @@
-const Productos = require('../models/Productos');
+/*const Productos = require('../models/Productos');
 
 const multer = require('multer');
 const shortid = require('shortid');
@@ -146,4 +146,4 @@ exports.buscarProducto = async (req, res, next) => {
     console.log(error);
     next();
   }
-};
+};*/

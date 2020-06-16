@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const pacientesSchema = new Schema({
+const personasSchema = new Schema({
     nombre: {
         type: String,
         trim: true,
@@ -14,38 +14,32 @@ const pacientesSchema = new Schema({
         type: Date,
         trim: true,
     },
-    nombreTutor: {
+    dni: {
+        type: Number,
+        trim: true,
+    },
+    cuil: {
         type: String,
         trim: true,
     },
-    telefonoTutor: {
+    email: {
+        type: String,
+        unique: true,
+        lowercase: true,
+        trim: true,
+    },
+    telefono: {
         type: String,
         trim: true,
     },
-    nombreAcompanante: {
-        type: String,
-        trim: true,
-    },
-    telefonoAcompanante: {
-        type: String,
-        trim: true,
-    },
-    obraSocial: {
-        type: String,
-        trim: true,
-    },
-    planOS: {
-        type: String,
-        trim: true,
-    },
-    numeroAfiliado: {
-        type: String,
-        trim: true,
-    },
-    persona: {
+    localidad: {
         type: Schema.ObjectId,
-        ref: 'Personas',
+        ref: 'Localidades',
+    },
+    direccion: {
+        type: String,
+        trim: true,
     },
 });
 
-module.exports = mongoose.model('Pacientes', pacientesSchema);
+module.exports = mongoose.model('Personas', personasSchema);

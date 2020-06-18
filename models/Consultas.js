@@ -12,11 +12,11 @@ const consultasSchema = new Schema({
     },
     fechaConsulta: {
         type: Date,
-        trim: true,
+
     },
     observaciones: {
         type: String,
-        trim: true,
+        trim: false,
     },
 });
 

@@ -4,41 +4,43 @@ const router = express.Router();
 //const productosController = require('../controllers/productosController');
 const pacientesController = require('../controllers/pacientesController');
 const usuariosController = require('../controllers/usuariosController');
+const consultasController = require('../controllers/consultasController');
+const medicosController = require('../controllers/medicosController');
 
 // middle para proteger las rutas
 const auth = require('../middleware/auth');
 
-module.exports = function () {
-  //agrega nuevos clientes via POST
-  /*  router.post('/clientes',
-      auth,
-      clienteController.nuevoCliente);
+module.exports = function() {
+    //agrega nuevos clientes via POST
+    /*  router.post('/clientes',
+        auth,
+        clienteController.nuevoCliente);
   
-    // obtener todos los clientes
-    router.get('/clientes',
-      auth,
-      clienteController.mostrarClientes
-    );
+      // obtener todos los clientes
+      router.get('/clientes',
+        auth,
+        clienteController.mostrarClientes
+      );
   
-    //obtener un cliente por id
-    router.get('/clientes/:idCliente',
-      auth,
-      clienteController.mostrarCliente);
+      //obtener un cliente por id
+      router.get('/clientes/:idCliente',
+        auth,
+        clienteController.mostrarCliente);
   
-    //Actualizar cliente
-    router.put('/clientes/:idCliente',
-      auth,
-      clienteController.actualizarCliente);
+      //Actualizar cliente
+      router.put('/clientes/:idCliente',
+        auth,
+        clienteController.actualizarCliente);
   
-    //Eliminar cliente
-    router.delete('/clientes/:idCliente',
-      auth,
-      clienteController.eliminarCliente);
-  */
-  /** PRODUCTOS */
+      //Eliminar cliente
+      router.delete('/clientes/:idCliente',
+        auth,
+        clienteController.eliminarCliente);
+    */
+    /** PRODUCTOS */
 
-  //agrear nuevos productos
-  /*router.post(
+    //agrear nuevos productos
+    /*router.post(
     '/productos',
     auth,
     productosController.subirArchivo,
@@ -73,10 +75,10 @@ module.exports = function () {
     auth,
     productosController.buscarProducto);
 */
-  /** PEDIDOS */
+    /** PEDIDOS */
 
-  //agregar un nuevo pedido
-  /*router.post('/pedidos/nuevo/:idUsuario',
+    //agregar un nuevo pedido
+    /*router.post('/pedidos/nuevo/:idUsuario',
     auth,
     pedidosController.nuevoPedido);
 
@@ -100,33 +102,43 @@ module.exports = function () {
     auth,
     pedidosController.eliminarPedido);
 */
-  // Usuarios
-  router.post('/crear-cuenta',
-    auth,
-    usuariosController.registrarUsuario);
+    // Usuarios
+    router.post('/crear-cuenta',
+        auth,
+        usuariosController.registrarUsuario);
 
-  router.post('/iniciar-sesion', usuariosController.autenticarUsuario);
+    router.post('/iniciar-sesion', usuariosController.autenticarUsuario);
 
-  //Pacientes
-  //mostrar un mensaje
-  router.get('/mensaje', pacientesController.mensaje);
+    //Pacientes
+    //mostrar un mensaje
+    router.get('/mensaje', pacientesController.mensaje);
 
-  //agrega nuevos paciente via POST
-  router.post('/pacientes',
-    //auth,
-    pacientesController.nuevoPaciente);
+    //agrega nuevos paciente via POST
+    router.post('/pacientes',
+        //auth,
+        pacientesController.nuevoPaciente);
 
-  //get all pacientes
-  router.get('/pacientes',
-    //auth,
-    pacientesController.mostrarPacientes);
+    //get all pacientes
+    router.get('/pacientes',
+        //auth,
+        pacientesController.mostrarPacientes);
 
-  //Busqueda de pacientes
-  router.post('/pacientes/busqueda',
-    //auth,
-    pacientesController.buscarPaciente);
+    //Busqueda de pacientes
+    router.post('/pacientes/busqueda',
+        //auth,
+        pacientesController.buscarPaciente);
 
-  return router;
+    //Esto es Consultas
+    router.post('/consultas',
+        //auth,
+        consultasController.nuevaConsulta);
+
+    //agrega nuevos Medicos via POST
+    router.post('/medicos',
+        //auth,
+        medicosController.nuevoMedico);
+
+    return router;
 
 
 };

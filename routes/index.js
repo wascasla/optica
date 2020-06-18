@@ -109,8 +109,22 @@ module.exports = function () {
 
   //Pacientes
   //mostrar un mensaje
-  router.get('/mensaje',
-    pacientesController.mensaje);
+  router.get('/mensaje', pacientesController.mensaje);
+
+  //agrega nuevos paciente via POST
+  router.post('/pacientes',
+    //auth,
+    pacientesController.nuevoPaciente);
+
+  //get all pacientes
+  router.get('/pacientes',
+    //auth,
+    pacientesController.mostrarPacientes);
+
+  //Busqueda de pacientes
+  router.post('/pacientes/busqueda',
+    //auth,
+    pacientesController.buscarPaciente);
 
   return router;
 

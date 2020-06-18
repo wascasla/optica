@@ -2,18 +2,6 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const pacientesSchema = new Schema({
-    nombre: {
-        type: String,
-        trim: true,
-    },
-    apellido: {
-        type: String,
-        trim: true,
-    },
-    fechaNacimiento: {
-        type: Date,
-        trim: true,
-    },
     nombreTutor: {
         type: String,
         trim: true,
@@ -34,7 +22,7 @@ const pacientesSchema = new Schema({
         type: String,
         trim: true,
     },
-    planOS: {
+    planObraSocial: {
         type: String,
         trim: true,
     },
@@ -45,6 +33,10 @@ const pacientesSchema = new Schema({
     persona: {
         type: Schema.ObjectId,
         ref: 'Personas',
+    },
+    fichero: {
+        type: String,
+        trim: false,
     },
 });
 

@@ -5,18 +5,23 @@ const personasSchema = new Schema({
     nombre: {
         type: String,
         trim: true,
+        required: true,
     },
     apellido: {
         type: String,
         trim: true,
+        required: true,
     },
     fechaNacimiento: {
         type: Date,
         trim: true,
+        required: true,
     },
     dni: {
         type: Number,
         trim: true,
+        required: true,
+        unique: true,
     },
     cuil: {
         type: String,

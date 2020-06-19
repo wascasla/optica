@@ -4,12 +4,12 @@ const Consultas = require('../models/Consultas');
 const Medicos = require('../models/Medicos');
 
 // agrega una nueva consulta
-exports.nuevaConsulta = async(req, res, next) => {
+exports.nuevaConsulta = async (req, res, next) => {
     //const persona = new Personas(req.body)
     //const paciente = new Pacientes(req.body);
     const consulta = new Consultas(req.body);
-    fechaConsulta = new Date(req.body.fechaConsulta);
-    consulta.fechaConsulta = fechaConsulta;
+    //fechaConsulta = new Date(req.body.fechaConsulta);
+    //consulta.fechaConsulta = fechaConsulta;
 
 
 

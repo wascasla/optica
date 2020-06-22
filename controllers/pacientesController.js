@@ -3,6 +3,7 @@ const Personas = require('../models/Personas');
 
 // agrega un nuevo paciente
 exports.nuevoPaciente = async (req, res, next) => {
+    console.log(req.body)
     const persona = new Personas(req.body)
     const paciente = new Pacientes(req.body);
     paciente.persona = persona._id;
@@ -20,6 +21,7 @@ exports.nuevoPaciente = async (req, res, next) => {
     } catch (error) {
         // si hay un error, console.log y next para que no se
         // pare la aplicacion y siga al siguiente middleware
+        console.log(error);
         res.send(error);
         next();
     }

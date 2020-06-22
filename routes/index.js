@@ -7,6 +7,8 @@ const usuariosController = require('../controllers/usuariosController');
 const consultasController = require('../controllers/consultasController');
 const medicosController = require('../controllers/medicosController');
 const personasController = require('../controllers/personaController');
+const localidadesController = require('../controllers/localidadesController');
+const provinciasController = require('../controllers/provinciasController');
 
 // middle para proteger las rutas
 const auth = require('../middleware/auth');
@@ -167,6 +169,18 @@ router.delete('/pedidos/:idPedido',
   router.post('/personas/busqueda/dni',
     //auth,
     personasController.buscarPersonaXDni);
+
+  /* LOCALIDADES */
+  //mostrar todos los productos
+  router.get('/localidades',
+    //auth,
+    localidadesController.getLocalidades);
+
+  /* PROVINCIAS */
+  //mostrar todos los productos
+  router.get('/provincias',
+    //auth,
+    provinciasController.getProvincias);
 
   return router;
 

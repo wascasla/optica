@@ -13,9 +13,9 @@ const provinciasController = require('../controllers/provinciasController');
 // middle para proteger las rutas
 const auth = require('../middleware/auth');
 
-module.exports = function () {
-  //agrega nuevos clientes via POST
-  /*  router.post('/clientes',
+module.exports = function() {
+    //agrega nuevos clientes via POST
+    /*  router.post('/clientes',
       auth,
       clienteController.nuevoCliente);
  
@@ -40,10 +40,10 @@ module.exports = function () {
       auth,
       clienteController.eliminarCliente);
   */
-  /** PRODUCTOS */
+    /** PRODUCTOS */
 
-  //agrear nuevos productos
-  /*router.post(
+    //agrear nuevos productos
+    /*router.post(
   '/productos',
   auth,
   productosController.subirArchivo,
@@ -78,10 +78,10 @@ router.post('/productos/busqueda/:query',
   auth,
   productosController.buscarProducto);
 */
-  /** PEDIDOS */
+    /** PEDIDOS */
 
-  //agregar un nuevo pedido
-  /*router.post('/pedidos/nuevo/:idUsuario',
+    //agregar un nuevo pedido
+    /*router.post('/pedidos/nuevo/:idUsuario',
   auth,
   pedidosController.nuevoPedido);
 
@@ -105,84 +105,90 @@ router.delete('/pedidos/:idPedido',
   auth,
   pedidosController.eliminarPedido);
 */
-  // Usuarios
-  router.post('/crear-cuenta',
-    auth,
-    usuariosController.registrarUsuario);
+    // Usuarios
+    router.post('/crear-cuenta',
+        auth,
+        usuariosController.registrarUsuario);
 
-  router.post('/iniciar-sesion', usuariosController.autenticarUsuario);
+    router.post('/iniciar-sesion', usuariosController.autenticarUsuario);
 
-  /* PACIENTES */
-  //mostrar un mensaje
-  router.get('/mensaje', pacientesController.mensaje);
+    /* PACIENTES */
+    //mostrar un mensaje
+    router.get('/mensaje', pacientesController.mensaje);
 
-  //agrega nuevos paciente via POST
-  router.post('/pacientes',
-    //auth,
-    pacientesController.nuevoPaciente);
+    //agrega nuevos paciente via POST
+    router.post('/pacientes',
+        //auth,
+        pacientesController.nuevoPaciente);
 
-  //get all pacientes
-  router.get('/pacientes',
-    //auth,
-    pacientesController.mostrarPacientes);
+    //get all pacientes
+    router.get('/pacientes',
+        //auth,
+        pacientesController.mostrarPacientes);
 
-  //Busqueda de paciente por id Persona
-  router.post('/pacientes/busqueda/Persona',
-    //auth,
-    pacientesController.buscarPacientePorIDPersona);
+    //Busqueda de paciente por id Persona
+    router.post('/pacientes/busqueda/Persona',
+        //auth,
+        pacientesController.buscarPacientePorIDPersona);
 
-  //Busqueda de pacientes por dni
-  router.post('/pacientes/busqueda/dni',
-    //auth,
-    pacientesController.buscarPacienteXDni);
+    //Busqueda de pacientes por dni
+    router.post('/pacientes/busqueda/dni',
+        //auth,
+        pacientesController.buscarPacienteXDni);
 
-  //mostrar un paciente por ID
-  router.get('/pacientes/:idPaciente',
-    //auth,
-    pacientesController.mostrarPacienteById);
+    //mostrar un paciente por ID
+    router.get('/pacientes/:idPaciente',
+        //auth,
+        pacientesController.mostrarPacienteById);
 
-  //Actualizar paciente
-  router.put('/pacientes/:idPaciente',
-    //auth,
-    pacientesController.actualizarPaciente);
+    //Actualizar paciente
+    router.put('/pacientes/:idPaciente',
+        //auth,
+        pacientesController.actualizarPaciente);
 
-  /* CONSULTAS */
-  // guardar nueva consulta
-  router.post('/consultas',
-    //auth,
-    consultasController.nuevaConsulta);
+    /* CONSULTAS */
+    // guardar nueva consulta
+    router.post('/consultas',
+        //auth,
+        consultasController.nuevaConsulta);
 
-  /* MEDICOS */
-  //agrega nuevos Medicos via POST
-  router.post('/medicos',
-    //auth,
-    medicosController.nuevoMedico);
+    /* MEDICOS */
+    //agrega nuevos Medicos via POST
+    router.post('/medicos',
+        //auth,
+        medicosController.nuevoMedico);
 
 
-  /* PERSONAS */
-  //Busqueda de pacientes por nombre
-  router.post('/personas/busqueda/nombre',
-    //auth,
-    personasController.buscarPersonaXNombreYApellido);
+    /* PERSONAS */
+    //Busqueda de pacientes por nombre
+    router.post('/personas/busqueda/nombre',
+        //auth,
+        personasController.buscarPersonaXNombreYApellido);
 
-  //Busqueda de pacientes por dni
-  router.post('/personas/busqueda/dni',
-    //auth,
-    personasController.buscarPersonaXDni);
+    //Busqueda de pacientes por dni
+    router.post('/personas/busqueda/dni',
+        //auth,
+        personasController.buscarPersonaXDni);
 
-  /* LOCALIDADES */
-  //mostrar todos los productos
-  router.get('/localidades',
-    //auth,
-    localidadesController.getLocalidades);
+    /* LOCALIDADES */
+    //mostrar todos los productos
+    router.get('/localidades',
+        //auth,
+        localidadesController.getLocalidades);
 
-  /* PROVINCIAS */
-  //mostrar todos los productos
-  router.get('/provincias',
-    //auth,
-    provinciasController.getProvincias);
+    /* PROVINCIAS */
+    //mostrar todos los productos
+    router.get('/provincias',
+        //auth,
+        provinciasController.getProvincias);
 
-  return router;
+    //Busqueda de consultas por id Paciente
+    router.post('/consultas/busqueda/Paciente',
+        //auth,
+        consultasController.buscarConsultasPorIDPaciente);
+
+
+    return router;
 
 
 };

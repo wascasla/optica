@@ -4,7 +4,7 @@ const Consultas = require('../models/Consultas');
 const Medicos = require('../models/Medicos');
 
 // agrega una nueva consulta
-exports.nuevaConsulta = async (req, res, next) => {
+exports.nuevaConsulta = async(req, res, next) => {
     //const persona = new Personas(req.body)
     //const paciente = new Pacientes(req.body);
     const consulta = new Consultas(req.body);
@@ -22,6 +22,29 @@ exports.nuevaConsulta = async (req, res, next) => {
         // si hay un error, console.log y next para que no se
         // pare la aplicacion y siga al siguiente middleware
         res.send(error);
+        next();
+    }
+};
+
+//buscar consultas por ID paciente
+exports.buscarConsultasPorIDPaciente = async(req, res, next) => {
+    try {
+        // obtener el query
+        const { paciente } = req.body;
+        const consulta = await Consultas.findOne({ paciente: paciente })
+            .populate('paciente')
+            .populate('medico')
+            //console.log(paciente);
+
+        if (consulta !== null) {
+            res.json(consulta);
+        } else {
+            res.jason({ mensaje: "No se encuentran consultas con ese ID de paciente" });
+        }
+
+
+    } catch (error) {
+        console.log(error);
         next();
     }
 };

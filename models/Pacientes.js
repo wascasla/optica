@@ -38,6 +38,18 @@ const pacientesSchema = new Schema({
         type: String,
         trim: false,
     },
+    fechaUltimaConsulta: {
+        type: Date,
+        trim: false,
+    },
+    medicoUltimaConsulta: {
+        type: String,
+        trim: false,
+    },
+    observacion: {
+        type: String,
+        trim: false,
+    },
 });
 
 module.exports = mongoose.model('Pacientes', pacientesSchema);

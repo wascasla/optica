@@ -21,7 +21,7 @@ exports.nuevoPaciente = async (req, res, next) => {
     } catch (error) {
         // si hay un error, console.log y next para que no se
         // pare la aplicacion y siga al siguiente middleware
-        console.log(error);
+        console.log(error.message);
         res.send(error);
         next();
     }

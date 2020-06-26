@@ -31,8 +31,9 @@ exports.nuevoPaciente = async (req, res, next) => {
 exports.buscarPacientePorIDPersona = async (req, res, next) => {
     try {
         // obtener el query
-        const { idPersona } = req.body;
-        const paciente = await Pacientes.findOne({ persona: idPersona })
+        //const { idPersona } = req.body;
+        //const paciente = await Pacientes.findOne({ persona: idPersona })
+        const paciente = await Pacientes.findOne({ persona: req.params.idPersona })
             .populate('persona')
         //console.log(paciente);
 
@@ -126,6 +127,7 @@ exports.mostrarPacienteById = async (req, res, next) => {
 //actualizar un paciente
 exports.actualizarPaciente = async (req, res, next) => {
     try {
+
         // actualizar paciente
         const paciente = await Pacientes.findOneAndUpdate(
             { _id: req.params.idPaciente },
@@ -133,20 +135,22 @@ exports.actualizarPaciente = async (req, res, next) => {
             {
                 new: true, //aqui le decimos que almacene el valor nuevo
             }
-        )//.populate('persona');
+        );
 
         //actualizar datos de la persona
         const persona = await Personas.findOneAndUpdate(
+
             { _id: paciente.persona },
-            req.body,
+            req.body.persona,
             {
                 new: true, //aqui le decimos que almacene el valor nuevo
             }
         );
 
-        const pacienteActualizado = await Pacientes.findOne({ _id: req.params.idPaciente }).populate('persona');
+        //const pacienteActualizado = await Pacientes.findOne({ _id: req.params.idPaciente }).populate('persona');
 
-        res.json(pacienteActualizado);
+        //res.json(pacienteActualizado);
+        res.json({ mensaje: 'Paciente actualizado con exito' });
     } catch (error) {
         res.send(error);
         next();

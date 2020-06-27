@@ -170,6 +170,11 @@ pedidosController.eliminarPedido);
     //auth,
     personasController.buscarPersonaXDni);
 
+  //Actualizar persona
+  router.put('/persona/:idPersona',
+    //auth,
+    personasController.actualizarPersona);
+
   /* LOCALIDADES */
   //mostrar todos los productos
   router.get('/localidades',

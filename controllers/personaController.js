@@ -52,3 +52,39 @@ exports.buscarPersonaXDni = async (req, res, next) => {
         next();
     }
 };
+
+
+//actualizar un paciente
+exports.actualizarPersona = async (req, res, next) => {
+    try {
+        console.log(req.body)
+        // actualizar paciente
+        /* const paciente = await Pacientes.findOneAndUpdate(
+            { _id: req.params.idPaciente },
+            req.body,
+            {
+                new: true, //aqui le decimos que almacene el valor nuevo
+            }
+        ); */
+
+        //actualizar datos de la persona
+        const persona = await Personas.findOneAndUpdate(
+
+            { _id: req.params.idPersona },
+            req.body,
+            {
+                new: true, //aqui le decimos que almacene el valor nuevo
+            }
+        );
+
+        //const pacienteActualizado = await Pacientes.findOne({ _id: req.params.idPaciente }).populate('persona');
+
+        //res.json(pacienteActualizado);
+        res.json({ code: 1 });
+    } catch (error) {
+        res.send(error);
+        next();
+    }
+
+
+};

@@ -34,7 +34,19 @@ exports.buscarPacientePorIDPersona = async (req, res, next) => {
         //const { idPersona } = req.body;
         //const paciente = await Pacientes.findOne({ persona: idPersona })
         const paciente = await Pacientes.findOne({ persona: req.params.idPersona })
-            .populate('persona')
+            //.populate('persona')
+            .populate({
+                path: 'persona',
+                model: 'Personas',
+                populate: {
+                    path: 'localidad',
+                    model: 'Localidades',
+                    populate: {
+                        path: 'provincia',
+                        model: 'Provincias'
+                    }
+                }
+            })
         //console.log(paciente);
 
         if (paciente !== null) {
@@ -138,14 +150,14 @@ exports.actualizarPaciente = async (req, res, next) => {
         );
 
         //actualizar datos de la persona
-        const persona = await Personas.findOneAndUpdate(
+        /* const persona = await Personas.findOneAndUpdate(
 
-            { _id: paciente.persona },
+            { _id: paciente.persona._id },
             req.body.persona,
             {
                 new: true, //aqui le decimos que almacene el valor nuevo
             }
-        );
+        ); */
 
         //const pacienteActualizado = await Pacientes.findOne({ _id: req.params.idPaciente }).populate('persona');
 
@@ -155,6 +167,8 @@ exports.actualizarPaciente = async (req, res, next) => {
         res.send(error);
         next();
     }
+
+
 };
 
 //eliminar un paciente

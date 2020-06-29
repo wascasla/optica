@@ -181,11 +181,21 @@ pedidosController.eliminarPedido);
     //auth,
     localidadesController.getLocalidades);
 
+  //agrega nueva localidad via POST
+  router.post('/localidades',
+  //auth,
+  localidadesController.nuevaLocalidad);
+
   /* PROVINCIAS */
   //mostrar todos los productos
   router.get('/provincias',
     //auth,
     provinciasController.getProvincias);
+
+   //agrega nueva Provincia via POST
+   router.post('/provincias',
+   //auth,
+   provinciasController.nuevaProvincia);
 
   //Busqueda de consultas por id Paciente
   router.post('/consultas/busqueda/Paciente',

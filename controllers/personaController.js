@@ -88,3 +88,15 @@ exports.actualizarPersona = async (req, res, next) => {
 
 
 };
+
+//eliminar una persona
+exports.eliminarPersona = async (req, res, next) => {
+    TODO: "se puede eliminar una persona???"
+    try {
+        await Personas.findByIdAndDelete({ _id: req.params.idPersona });
+        res.json({ code: '1', mensaje: 'Paciente eliminado con exito' });
+    } catch (error) {
+        console.log(error);
+        next();
+    }
+};

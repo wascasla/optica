@@ -187,6 +187,11 @@ pedidosController.eliminarPedido);
     //auth,
     provinciasController.getProvincias);
 
+  //importar a la bd provincias y localidades
+  router.get('/provincias/importar',
+    //auth,
+    provinciasController.importarLocalidades);
+
   //Busqueda de consultas por id Paciente
   router.post('/consultas/busqueda/Paciente',
     //auth,

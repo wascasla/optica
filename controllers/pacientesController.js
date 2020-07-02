@@ -176,7 +176,7 @@ exports.eliminarPaciente = async (req, res, next) => {
     TODO: "se puede eliminar un paciente???"
     try {
         await Pacientes.findByIdAndDelete({ _id: req.params.idPaciente });
-        res.json({ mensaje: 'Paciente eliminado con exito' });
+        res.json({ code: 1, mensaje: 'Paciente eliminado con exito' });
     } catch (error) {
         console.log(error);
         next();

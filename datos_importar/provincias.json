@@ -1,0 +1,24 @@
+{"_id":{"$oid":"5efe3e93b5b42a35e8c4bc3a"},"nombre":"Salta","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5efe3e93b5b42a35e8c4bc79"},"nombre":"Buenos Aires","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5efe3e93b5b42a35e8c4bd8f"},"nombre":"San Luis","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5efe3e93b5b42a35e8c4bdd1"},"nombre":"Entre Ríos","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5efe3e93b5b42a35e8c4beda"},"nombre":"La Rioja","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5efe3e93b5b42a35e8c4beed"},"nombre":"Santiago del Estero","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5efe3e93b5b42a35e8c4bf35"},"nombre":"Chaco","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5efe3e93b5b42a35e8c4bf7c"},"nombre":"San Juan","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5efe3e93b5b42a35e8c4bf91"},"nombre":"Catamarca","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5efe3e93b5b42a35e8c4bfb9"},"nombre":"La Pampa","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5efe3e93b5b42a35e8c4c008"},"nombre":"Mendoza","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5efe3e93b5b42a35e8c4c020"},"nombre":"Misiones","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5efe3e93b5b42a35e8c4c092"},"nombre":"Neuquén","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5efe3e93b5b42a35e8c4c06e"},"nombre":"Formosa","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5efe3e93b5b42a35e8c4c0cc"},"nombre":"Río Negro","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5efe3e93b5b42a35e8c4c117"},"nombre":"Santa Fe","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5efe3e93b5b42a35e8c4c27f"},"nombre":"Tucumán","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5efe3e93b5b42a35e8c4c31d"},"nombre":"Tierra del Fuego, Antártida e Islas del Atlántico Sur","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5efe3e93b5b42a35e8c4c2ee"},"nombre":"Chubut","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5efe3e93b5b42a35e8c4c321"},"nombre":"Corrientes","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5efe3e93b5b42a35e8c4c364"},"nombre":"Córdoba","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5efe3e94b5b42a35e8c4c513"},"nombre":"Jujuy","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5efe3e94b5b42a35e8c4c552"},"nombre":"Santa Cruz","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5efe3e94b5b42a35e8c4c569"},"nombre":"Capital Federal","__v":{"$numberInt":"0"}}

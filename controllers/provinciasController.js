@@ -15,6 +15,7 @@ exports.getProvincias = async (req, res, next) => {
     }
 };
 
+<<<<<<< HEAD
 //mostrar todos los provincias
 exports.importarLocalidades = async (req, res, next) => {
     try {
@@ -50,3 +51,20 @@ exports.importarLocalidades = async (req, res, next) => {
     }
 
 };
+=======
+// agrega un nueva provincia
+exports.nuevaProvincia = async (req, res, next) => {
+    const provincia = new Provincias(req.body);
+  
+    try {
+      //almacenar el registro
+      await provincia.save();
+      res.json({ mensaje: 'Se agrego un nuevo provincia' });
+    } catch (error) {
+      // si hay un error, console.log y next para que no se
+      // pare la aplicacion y siga al siguiente middleware
+      res.send(error);
+      next();
+    }
+  };
+>>>>>>> 5fd387579c2c7b965d03c2c72f93238c75160b9e

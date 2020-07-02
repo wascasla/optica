@@ -181,6 +181,11 @@ pedidosController.eliminarPedido);
     //auth,
     localidadesController.getLocalidades);
 
+  //agrega nueva localidad via POST
+  router.post('/localidades',
+    //auth,
+    localidadesController.nuevaLocalidad);
+
   /* PROVINCIAS */
   //mostrar todos los productos
   router.get('/provincias',

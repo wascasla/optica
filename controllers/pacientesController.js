@@ -1,3 +1,4 @@
+const Counters = require('../models/Counters');
 const Pacientes = require('../models/Pacientes');
 const Personas = require('../models/Personas');
 
@@ -6,7 +7,13 @@ exports.nuevoPaciente = async (req, res, next) => {
     console.log(req.body)
     const persona = new Personas(req.body)
     const paciente = new Pacientes(req.body);
+    //const secuencia = await Counters.find();
+    //console.log(secuencia);
+    //const contador = new Counters({ _id: "productid", sequence_value: 0 });
+    //await contador.save()
     paciente.persona = persona._id;
+
+
     fechaNacimiento = new Date(paciente.fechaNacimiento)
     //console.log("persona: " + persona);
     //console.log("paciente: " + paciente);
@@ -16,6 +23,7 @@ exports.nuevoPaciente = async (req, res, next) => {
     try {
         //almacenar el registro
         await persona.save()
+        paciente.legajo = await getNextSequenceValue("productid");
         await paciente.save();
         res.json({ mensaje: 'Se agrego un nuevo paciente' });
     } catch (error) {
@@ -198,3 +206,26 @@ exports.mensaje = async (req, res, next) => {
         next();
     }
 };
+
+getNextSequenceValue = async (sequenceName) => {
+    // var sequenceDocument = Counters.findByIdAndUpdate({
+    //     query: { _id: sequenceName },
+    //     update: { $inc: { sequence_value: 1 } },
+    //     new: true
+    // });
+    var sequenceDocument = await Counters.findOneAndUpdate(
+        { "_id": sequenceName },
+        { $inc: { sequence_value: 1 } },
+        {
+            new: true, //aqui le decimos que almacene el valor nuevo
+        }
+    )
+    //console.log("dcouemnto")
+    //console.log(sequenceDocument);
+
+
+    //const secuencia = Counters.find();
+    //console.log(secuencia);
+    //console.log('secuendia numero: ' + sequenceDocument.sequence_value);
+    return sequenceDocument.sequence_value;
+}

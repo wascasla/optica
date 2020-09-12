@@ -50,6 +50,9 @@ const pacientesSchema = new Schema({
         type: String,
         trim: false,
     },
+    legajo: {
+        type: Number,
+    },
 });
 
 module.exports = mongoose.model('Pacientes', pacientesSchema);

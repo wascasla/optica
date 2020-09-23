@@ -1,3 +1,4 @@
+const Pacientes = require('../models/Pacientes');
 const Personas = require('../models/Personas');
 
 //buscar persona por nombre y apellido
@@ -9,10 +10,27 @@ exports.buscarPersonaXNombreYApellido = async (req, res, next) => {
         //si no envia el dni puede enviar el nombre y/o el apellido
         if (nombre !== '' || apellido !== '') {
             //const paciente = await Personas.find({ nombre: new RegExp(nombre, 'i')  $and  apellido: new RegExp(apellido, 'i') });
+            //const personas = await Personas.find({ $and: [{ nombre: new RegExp(nombre, 'i') }, { apellido: new RegExp(apellido, 'i') }] })
+
             const personas = await Personas.find({ $and: [{ nombre: new RegExp(nombre, 'i') }, { apellido: new RegExp(apellido, 'i') }] })
-            // .populate('persona'); // i: it means insensitive no es case sensitivo
-            //console.log(personas)
+
+            // let pacientes = [];
+
+            // for (persona in personas) {
+            //     //const pac = await (await Pacientes.findById({ persona: persona._id })).populate('persona').execPopulate();
+            //     const paciente = await Pacientes.findOne({ persona: persona._id })
+            //         //.populate('persona')
+            //         .populate({
+            //             path: 'persona',
+            //             model: 'Personas'
+            //         })
+            //     pacientes.push(paciente)
+            // }
+
             if (personas.length > 0) {
+                //si existe la persona busco el paciente
+                //res.json(personas);
+                //console.log(personas);
                 res.json(personas);
             } else {
                 res.json({ mensaje: 'No existen pacientes con esos parametros' });

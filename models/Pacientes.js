@@ -34,10 +34,6 @@ const pacientesSchema = new Schema({
         type: Schema.ObjectId,
         ref: 'Personas',
     },
-    fichero: {
-        type: String,
-        trim: false,
-    },
     fechaUltimaConsulta: {
         type: Date,
         trim: false,
@@ -49,10 +45,7 @@ const pacientesSchema = new Schema({
     observacion: {
         type: String,
         trim: false,
-    },
-    legajo: {
-        type: Number,
-    },
+    }
 });
 
 module.exports = mongoose.model('Pacientes', pacientesSchema);

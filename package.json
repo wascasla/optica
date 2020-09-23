@@ -7,7 +7,7 @@
     "desarrollo": "nodemon ./index.js",
     "start": "node ./index.js"
   },
-  "author": "Walter Schemith",
+  "author": "author",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.0",

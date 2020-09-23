@@ -22,8 +22,9 @@ exports.nuevoPaciente = async (req, res, next) => {
 
     try {
         //almacenar el registro
+        persona.legajo = await getNextSequenceValue("productid");
         await persona.save()
-        paciente.legajo = await getNextSequenceValue("productid");
+
         await paciente.save();
         res.json({ mensaje: 'Se agrego un nuevo paciente' });
     } catch (error) {

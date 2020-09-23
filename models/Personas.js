@@ -44,6 +44,14 @@ const personasSchema = new Schema({
         type: String,
         trim: true,
     },
+    fichero: {
+        type: String,
+        trim: true,
+    },
+    legajo: {
+        type: Number,
+        trim: true,
+    },
 });
 
 module.exports = mongoose.model('Personas', personasSchema);
